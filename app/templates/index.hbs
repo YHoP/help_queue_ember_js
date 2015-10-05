@@ -1,0 +1,12 @@
+<p>Current time is: {{current-time}}</p>
+
+<h3>List of students</h3>
+
+<ul>
+  {{#each model.students as |student|}}
+  <li>{{#link-to 'student' student.id}}{{student.firstName}} {{student.lastName}}{{/link-to}}</li>
+  {{/each}}
+</ul>
+
+
+{{new-student saveStudent="saveStudent"}}

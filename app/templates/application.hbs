@@ -1,3 +1,14 @@
-<h2 id="title">Welcome to Ember</h2>
+<div class="container">
 
-{{outlet}}
+<header class="jumbotron">
+  <h1>Help Queue</h1>
+  <ul class="nav nav-tabs">
+    <li role="presentation">{{#link-to 'index'}}Home{{/link-to}}</li>
+    <li role="presentation">{{#link-to 'teacher'}}Teacher{{/link-to}}</li>
+  </ul>
+</header>
+
+<div class="container">
+    {{outlet}}
+</div>
+</div>

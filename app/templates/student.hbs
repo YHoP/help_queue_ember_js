@@ -1,0 +1,21 @@
+<p>Current time is: {{current-time}}</p>
+
+<h4>{{model.firstName}} {{model.lastName}}</h4>
+
+<p>Ticket history:</p>
+<ul>
+  {{#each model.tickets as |ticket|}}
+    <li>Question: {{ticket.question}}<br>
+      {{#if ticket.isClosed}}
+        Time Added: {{format-time ticket.time_added}}<br>
+        Time closed: {{format-time ticket.time_closed}}<br>
+      {{else}}
+        Time Added: {{format-time ticket.time_added}}<br>
+        Wait Time: {{wait-time ticket.time_added}}
+        {{close-ticket closeTicket="closeTicket" ticket=ticket}}
+      {{/if}}
+      </li>
+    {{/each}}
+</ul>
+
+{{new-ticket saveTicket="saveTicket" student=model}}

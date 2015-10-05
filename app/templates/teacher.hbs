@@ -1,0 +1,9 @@
+<h3>List of students</h3>
+
+<ul>
+  {{#each model.students as |student|}}
+  <li>{{#link-to 'student' student.id}}{{student.firstName}} {{student.lastName}}{{/link-to}}<br>
+    Wait Time: {{wait-time student.ticket.time_added}}
+  </li>
+  {{/each}}
+</ul>
