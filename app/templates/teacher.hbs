@@ -3,7 +3,13 @@
 <ul>
   {{#each model.students as |student|}}
   <li>{{#link-to 'student' student.id}}{{student.firstName}} {{student.lastName}}{{/link-to}}<br>
-    Wait Time: {{wait-time student.ticket.time_added}}
+      {{#each student.tickets as |ticket|}}
+        {{#if ticket.isClose}}
+
+        {{else}}
+          Wait Time: {{wait-time ticket.time_added}}
+        {{/if}}
+      {{/each}}
   </li>
   {{/each}}
 </ul>
